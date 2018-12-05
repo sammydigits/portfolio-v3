@@ -1,25 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/header";
+import Cards from "./components/cards";
+import Footer from "./components/footer";
 
 class App extends Component {
+  state = {
+    cards: [
+      {
+        id: 1,
+        title: "Apple",
+        date: "November 2018",
+        image: "./images/apple-card.png"
+      },
+      {
+        id: 2,
+        title: "Google",
+        date: "October 2018",
+        image: "./images/apple-card.png"
+      },
+      {
+        id: 3,
+        title: "Amazon",
+        date: "September 2018",
+        image: "./images/apple-card.png"
+      },
+      {
+        id: 4,
+        title: "Facebook",
+        date: "August 2018",
+        image: "./images/apple-card.png"
+      }
+    ]
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <Header />
+        <Cards cards={this.state.cards} />
+        <Footer />
       </div>
     );
   }
