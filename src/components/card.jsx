@@ -10,7 +10,7 @@ class Card extends Component {
         <a href="project.html">
           <div
             className="card-image"
-            style={{ backgroundImage: `url(${image})` }}
+            style={{ backgroundImage: `url(images/${image})` }}
           />
           <div className="card-content">
             <p>{title}</p>

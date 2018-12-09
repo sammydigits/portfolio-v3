@@ -9,7 +9,7 @@ class Cards extends Component {
       //use react fragment so our css grid doesnt break
       <React.Fragment>
         {cards.map(card => (
-          //pass the entire card object to the card, rather than individual props
+          //pass the entire card object to the card
           <Card key={card.id} card={card} />
         ))}
       </React.Fragment>

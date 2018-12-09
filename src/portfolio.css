@@ -101,7 +101,7 @@ h2 {
   margin-bottom: 40px;
 }
 .header .nav-line {
-  background-image: url("images/line.png");
+  background-image: url("/images/line.png");
   background-repeat: repeat-x;
   background-position: 0px 9px;
 }

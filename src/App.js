@@ -10,25 +10,25 @@ class App extends Component {
         id: 1,
         title: "Apple",
         date: "November 2018",
-        image: "./images/apple-card.png"
+        image: "apple-card.png"
       },
       {
         id: 2,
-        title: "Google",
+        title: "Netlify",
         date: "October 2018",
-        image: "./images/apple-card.png"
+        image: "netlify-card.png"
       },
       {
         id: 3,
-        title: "Amazon",
+        title: "AMP",
         date: "September 2018",
-        image: "./images/apple-card.png"
+        image: "amp-card.png"
       },
       {
         id: 4,
-        title: "Facebook",
+        title: "Drupal",
         date: "August 2018",
-        image: "./images/apple-card.png"
+        image: "drupal-card.png"
       }
     ]
   };
