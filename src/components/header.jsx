@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <header className="header">
         <h1>Sam Thompson</h1>
-        <h2>Frontend Web Developer</h2>
+        <h2>Full Stack Web Developer</h2>
         <div className="nav-line">
           <ul>
             <li>

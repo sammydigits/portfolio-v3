@@ -1,5 +1,5 @@
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 .container {
   display: grid;
@@ -87,14 +87,12 @@ body {
   color: #5d738d;
 }
 h1 {
-  font-family: "Playfair Display", serif;
-  font-weight: 400;
+  font-weight: 600;
   color: #b70038;
   margin-bottom: 0;
 }
 h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: 400;
+  font-weight: 300;
   color: #5d7292;
   font-size: 1.1em;
   margin-top: 0;

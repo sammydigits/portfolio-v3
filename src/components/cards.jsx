@@ -10,7 +10,7 @@ class Cards extends Component {
       <React.Fragment>
         {cards.map(card => (
           //pass the entire card object to the card
-          <Card key={card.id} card={card} />
+          <Card key={card.nid[0].value} card={card} />
         ))}
       </React.Fragment>
     );
