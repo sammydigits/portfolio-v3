@@ -74,17 +74,23 @@ body {
   padding-top: 15px;
 }
 .card-content p {
-  margin: 0;
+  margin: 8px 0;
+  font-weight: 600;
 }
-.card-content span {
+.card-date {
   font-size: 12px;
   color: #5d738d;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 10px;
 }
-.card-content p > i {
+.card-tags {
+  padding-left: 8px;
+  border-left: solid 2px #b70038;
+  font-size: 12px;
   color: #5d738d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
 }
 h1 {
   font-weight: 600;

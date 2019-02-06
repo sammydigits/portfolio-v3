@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Route } from "react-router-dom";
 import Header from "./components/header";
 import Cards from "./components/cards";
 import Footer from "./components/footer";
@@ -29,6 +30,11 @@ class App extends Component {
           {
             value: "01/01/1970"
           }
+        ],
+        field_type: [
+          {
+            value: ""
+          }
         ]
       }
     ]
@@ -40,6 +46,7 @@ class App extends Component {
       "https://portfolio-cms.sam-thompson.info/rest/articles"
     );
     //overwrite initial state
+    //        <Cards cards={this.state.cards} />
     this.setState({ cards });
   }
 
@@ -47,7 +54,10 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <Cards cards={this.state.cards} />
+        <Route
+          path="/"
+          render={props => <Cards {...props} cards={this.state.cards} />}
+        />
         <Footer />
       </div>
     );
