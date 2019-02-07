@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Route } from "react-router-dom";
+import httpService from "./services/httpService";
 import Header from "./components/header";
 import Cards from "./components/cards";
 import Footer from "./components/footer";
+
+//my drupal cms rest endpoint
+const articlesEndpoint =
+  "https://portfolio-cms.sam-thompson.info/rest/articles";
 
 class App extends Component {
   //setup the initial state
@@ -42,11 +46,8 @@ class App extends Component {
 
   async componentDidMount() {
     //use axios to get our api data, rename it to cards
-    const { data: cards } = await axios.get(
-      "https://portfolio-cms.sam-thompson.info/rest/articles"
-    );
-    //overwrite initial state
-    //        <Cards cards={this.state.cards} />
+    const { data: cards } = await httpService.get(articlesEndpoint);
+    //update initial state
     this.setState({ cards });
   }
 
