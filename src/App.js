@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import httpService from "./services/httpService";
 import Header from "./components/header";
 import Cards from "./components/cards";
+import ProjectDetails from "./components/projectdetails";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
@@ -56,6 +57,7 @@ class App extends Component {
       <div className="container">
         <Header />
         <Switch>
+          <Route path="/project/:id" component={ProjectDetails} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route

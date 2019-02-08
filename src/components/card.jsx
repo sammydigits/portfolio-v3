@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
 class Card extends Component {
   render() {
     //use object destructing to extract the properties from the card object
     const {
+      nid,
       field_image,
       title,
       field_date_worked,
@@ -14,7 +16,7 @@ class Card extends Component {
     return (
       //wrapper div for each card on the grid
       <div className="card">
-        <a href="project.html">
+        <Link to={`/project/${nid[0].value}`}>
           <div
             className="card-image"
             style={{
@@ -28,7 +30,7 @@ class Card extends Component {
               <Moment format="MMMM YYYY">{field_date_worked[0].value}</Moment>
             </span>
           </div>
-        </a>
+        </Link>
       </div>
     );
   }
