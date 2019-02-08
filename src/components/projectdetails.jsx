@@ -5,7 +5,7 @@ import config from "../config.json";
 class ProjectDetails extends Component {
   //setup the initial state
   state = {
-    cards: [
+    project: [
       {
         title: [
           {
@@ -37,19 +37,23 @@ class ProjectDetails extends Component {
   };
 
   async componentDidMount() {
-    //use axios to get our api data, rename it to cards
-    const { data: cards } = await httpService.get(
+    //use axios to get our api data, rename it to project
+    const { data: project } = await httpService.get(
       config.portfolioArticlesEndPoint + "/" + this.props.match.params.id
     );
     //update initial state
-    this.setState({ cards });
-    console.log(this.state.cards);
+    this.setState({ project });
+    console.log(this.state.project);
   }
   render() {
     return (
       <div>
-        <h1>{this.state.cards[0].title[0].value}</h1>
-        <p>{this.state.cards[0].body[0].value}</p>
+        <h1>{this.state.project[0].title[0].value}</h1>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: this.state.project[0].body[0].value
+          }}
+        />
       </div>
     );
   }
