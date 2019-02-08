@@ -1,4 +1,5 @@
 import axios from "axios";
+import logger from "./logService";
 
 //catch axios errors
 axios.interceptors.response.use(null, error => {
@@ -10,8 +11,8 @@ axios.interceptors.response.use(null, error => {
 
   //if error is not expected
   if (!expectedError) {
-    console.log("Error", error);
-    alert("An unexpected error occured");
+    //pass the error to my custom log service
+    logger.log(error);
   }
 
   //return a rejected promise no matter what happens

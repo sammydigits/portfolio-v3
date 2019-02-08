@@ -4,7 +4,6 @@ class Cards extends Component {
   render() {
     // use object destructing to exract the properties of the props object
     const { cards } = this.props;
-    console.log(cards);
 
     return (
       //use react fragment so our css grid doesnt break

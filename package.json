@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "moment": "^2.24.0",
+    "raven-js": "^3.27.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-moment": "^0.8.4",

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import httpService from "./services/httpService";
 import Header from "./components/header";
 import Cards from "./components/cards";
+import About from "./components/about";
+import Contact from "./components/contact";
 import Footer from "./components/footer";
-
-//my drupal cms rest endpoint
-const articlesEndpoint =
-  "https://portfolio-cms.sam-thompson.info/rest/articles";
-
+import config from "./config.json";
 class App extends Component {
   //setup the initial state
   state = {
@@ -46,7 +44,9 @@ class App extends Component {
 
   async componentDidMount() {
     //use axios to get our api data, rename it to cards
-    const { data: cards } = await httpService.get(articlesEndpoint);
+    const { data: cards } = await httpService.get(
+      config.portfolioArticlesEndPoint
+    );
     //update initial state
     this.setState({ cards });
   }
@@ -55,10 +55,15 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <Route
-          path="/"
-          render={props => <Cards {...props} cards={this.state.cards} />}
-        />
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route
+            path="/"
+            render={props => <Cards {...props} cards={this.state.cards} />}
+          />
+        </Switch>
+
         <Footer />
       </div>
     );
