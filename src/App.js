@@ -54,7 +54,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <React.Fragment>
         <Header />
         <Switch>
           <Route path="/project/:id" component={ProjectDetails} />
@@ -65,9 +65,8 @@ class App extends Component {
             render={props => <Cards {...props} cards={this.state.cards} />}
           />
         </Switch>
-
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }

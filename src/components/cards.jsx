@@ -6,13 +6,12 @@ class Cards extends Component {
     const { cards } = this.props;
 
     return (
-      //use react fragment so our css grid doesnt break
-      <React.Fragment>
+      <div class="cards-container">
         {cards.map(card => (
           //pass the entire card object to each card
           <Card key={card.nid[0].value} card={card} />
         ))}
-      </React.Fragment>
+      </div>
     );
   }
 }

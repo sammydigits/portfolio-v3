@@ -22,6 +22,12 @@ class ProjectDetails extends Component {
             processed: ""
           }
         ],
+        field_image: [
+          {
+            url: "",
+            alt: ""
+          }
+        ],
         field_date_worked: [
           {
             value: "01/01/1970"
@@ -43,15 +49,26 @@ class ProjectDetails extends Component {
     );
     //update initial state
     this.setState({ project });
-    console.log(this.state.project);
+    console.log(this.state.project[0]);
   }
   render() {
+    //use objective destructuing to extract the properties from the project
+    const { title, body, field_image } = this.state.project[0];
+
     return (
-      <div>
-        <h1>{this.state.project[0].title[0].value}</h1>
+      <div class="details-container">
+        <div
+          className="detail-image"
+          style={{
+            backgroundImage: `url(${field_image[0].url})`
+          }}
+        />
+        <div class="detail-title">
+          <h1>{title[0].value}</h1>
+        </div>
         <div
           dangerouslySetInnerHTML={{
-            __html: this.state.project[0].body[0].value
+            __html: body[0].value
           }}
         />
       </div>
