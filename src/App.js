@@ -1,46 +1,25 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import httpService from "./services/httpService";
+import posed, { PoseGroup } from "react-pose";
 import Header from "./components/header";
 import Cards from "./components/cards";
 import ProjectDetails from "./components/projectdetails";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import ScrollToTop from "./components/scrollToTop";
 import config from "./config.json";
+
+const RouteContainer = posed.div({
+  enter: { opacity: 1, delay: 100, beforeChildren: true },
+  exit: { opacity: 0 }
+});
+
 class App extends Component {
   //setup the initial state
   state = {
-    cards: [
-      {
-        title: [
-          {
-            value: ""
-          }
-        ],
-        nid: [
-          {
-            value: Math.random
-          }
-        ],
-        field_image: [
-          {
-            url:
-              "https://us.v-cdn.net/5019960/uploads/editor/7r/aozh89cuo8e8.gif"
-          }
-        ],
-        field_date_worked: [
-          {
-            value: "01/01/1970"
-          }
-        ],
-        field_type: [
-          {
-            value: ""
-          }
-        ]
-      }
-    ]
+    cards: []
   };
 
   async componentDidMount() {
@@ -48,6 +27,7 @@ class App extends Component {
     const { data: cards } = await httpService.get(
       config.portfolioArticlesEndPoint
     );
+    console.log(cards);
     //update initial state
     this.setState({ cards });
   }
@@ -56,15 +36,24 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header />
-        <Switch>
-          <Route path="/project/:id" component={ProjectDetails} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route
-            path="/"
-            render={props => <Cards {...props} cards={this.state.cards} />}
-          />
-        </Switch>
+        <ScrollToTop>
+          <PoseGroup>
+            <RouteContainer key={window.location.pathname}>
+              <Switch>
+                <Route path="/project/:id" component={ProjectDetails} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+                <Route
+                  path="/"
+                  render={props => (
+                    <Cards {...props} cards={this.state.cards} />
+                  )}
+                />
+              </Switch>
+            </RouteContainer>
+          </PoseGroup>
+        </ScrollToTop>
+
         <Footer />
       </React.Fragment>
     );

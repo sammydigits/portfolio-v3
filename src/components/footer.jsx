@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 //footer can be a stateless functional component, it doesnt do much
 const Footer = () => {

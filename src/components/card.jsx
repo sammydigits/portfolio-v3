@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import posed from "react-pose";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
+
+const Item = posed.div({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 10, opacity: 0 }
+});
 
 class Card extends Component {
   render() {
@@ -15,7 +21,7 @@ class Card extends Component {
 
     return (
       //wrapper div for each card on the grid
-      <div className="card">
+      <Item className="card">
         <Link to={`/project/${nid[0].value}`}>
           <div
             className="card-image"
@@ -24,14 +30,14 @@ class Card extends Component {
             }}
           />
           <div className="card-content">
-            <span className="card-tags">{field_type[0].value}</span>
+            <span className="tag">{field_type[0].value}</span>
             <p>{title[0].value}</p>
-            <span className="card-date">
+            <time className="card-date">
               <Moment format="MMMM YYYY">{field_date_worked[0].value}</Moment>
-            </span>
+            </time>
           </div>
         </Link>
-      </div>
+      </Item>
     );
   }
 }

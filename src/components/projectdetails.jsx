@@ -1,7 +1,39 @@
 import React, { Component } from "react";
+import posed from "react-pose";
 import { Link } from "react-router-dom";
 import httpService from "../services/httpService";
+import Profile from "./profile";
+import Moment from "react-moment";
 import config from "../config.json";
+
+const Container = posed.div({
+  enter: { staggerChildren: 200 }
+});
+
+const H1 = posed.h1({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
+});
+
+const DetailMeta = posed.p({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 100, opacity: 0 }
+});
+
+const DetailImage = posed.div({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
+});
+
+const ProfileContainer = posed.div({
+  enter: { y: 0, opacity: 1 },
+  exit: { y: 50, opacity: 0 }
+});
+
+const MainContent = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
 
 class ProjectDetails extends Component {
   //setup the initial state
@@ -52,6 +84,16 @@ class ProjectDetails extends Component {
           {
             value: ""
           }
+        ],
+        field_date_worked: [
+          {
+            value: ""
+          }
+        ],
+        field_image: [
+          {
+            value: ""
+          }
         ]
       }
     ]
@@ -82,49 +124,67 @@ class ProjectDetails extends Component {
       field_type
     } = this.state.project[0];
 
-    //ensure inline images are prefixed with cms url
+    //ensure inline all images are prefixed with cms url
     let updatedBody = body[0].processed.replace(
-      'src="/',
+      /src="\//g,
       'src="https://portfolio-cms.sam-thompson.info/'
     );
 
     return (
-      <div class="details-container">
-        <div
+      <Container className="details-container">
+        <DetailImage
           className="detail-image"
           style={{
             backgroundImage: `url(${field_image[0].url})`
           }}
         />
-        <div class="detail-title">
-          <h1>{title[0].value}</h1>
-          <p>
-            {field_date_worked[0].value} . {field_type[0].value}
-          </p>
+        <div className="detail-title">
+          <H1>{title[0].value}</H1>
+          <DetailMeta>
+            <Moment format="MMMM YYYY">{field_date_worked[0].value}</Moment> .{" "}
+            {field_type[0].value}
+          </DetailMeta>
         </div>
         <div>
-          <div class="profile">Sam Thompson</div>
-          <div class="related">
-            <p>Recent Projects</p>
-            <ul>
-              {this.state.related.map(project => (
-                //pass the entire card object to each card
-                <li key={project.nid[0].value}>
-                  <Link to={`/project/${project.nid[0].value}`}>
-                    {project.title[0].value}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <ProfileContainer>
+            <Profile />
+          </ProfileContainer>
+          <div className="related">
+            <p className="tag">Recent Projects</p>
+
+            {this.state.related.map(project => (
+              <Link
+                to={`/project/${project.nid[0].value}`}
+                className="teaser"
+                key={project.nid[0].value}
+              >
+                <div className="teaser-content">
+                  <h4>{project.title[0].value}</h4>
+                  <time className="card-date">
+                    <Moment format="MMMM YYYY">
+                      {project.field_date_worked[0].value}
+                    </Moment>
+                  </time>
+                </div>
+                <div className="teaser-image">
+                  <div
+                    className="teaser-bgimage"
+                    style={{
+                      backgroundImage: `url(${project.field_image[0].url})`
+                    }}
+                  />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
-        <div
+        <MainContent
           className="detail-body"
           dangerouslySetInnerHTML={{
             __html: updatedBody
           }}
         />
-      </div>
+      </Container>
     );
   }
 }
