@@ -21,8 +21,8 @@ const DetailMeta = posed.p({
 });
 
 const DetailImage = posed.div({
-  enter: { y: 0, opacity: 1 },
-  exit: { y: 50, opacity: 0 }
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
 });
 
 const ProfileContainer = posed.div({
@@ -117,6 +117,7 @@ class ProjectDetails extends Component {
   render() {
     //use objective destructuing to extract the properties from the project
     const {
+      nid,
       title,
       body,
       field_image,
@@ -178,12 +179,18 @@ class ProjectDetails extends Component {
             ))}
           </div>
         </div>
-        <MainContent
-          className="detail-body"
-          dangerouslySetInnerHTML={{
-            __html: updatedBody
-          }}
-        />
+        <MainContent>
+          <div
+            className="detail-body"
+            dangerouslySetInnerHTML={{
+              __html: updatedBody
+            }}
+          />
+          <hr />
+          <p>
+            <Link to={`/project/${nid[0].value + 1}`}>Next Project</Link>
+          </p>
+        </MainContent>
       </Container>
     );
   }

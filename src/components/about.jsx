@@ -1,20 +1,30 @@
 import React, { Component } from "react";
+import posed from "react-pose";
+
+const Container = posed.div({
+  enter: { staggerChildren: 50 }
+});
+
+const P = posed.p({
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 50, opacity: 0 }
+});
 
 class About extends Component {
   state = {};
   render() {
     return (
-      <div className="about">
+      <Container className="about">
         <h1>About</h1>
-        <p>
+        <P>
           When all the other students at Art College submitted paintings and
           drawings for their final projects, I built a "virtual bank" using
           Macromedia Director and its Lingo scripting language, and presented it
           on an Apple Power Macintosh 5400. This was in 1996, before any bank in
           the UK was offering online banking. The idea came from my father, who
           has always been a pioneer.
-        </p>
-        <p>
+        </P>
+        <P>
           After graduating from college, while working as a junior graphic
           designer at my fathers design agency, I tagged along with some of the
           nerds around the office, and started learning HTML. We used the newly
@@ -23,62 +33,62 @@ class About extends Component {
           Dreamweaver. I started off converting techinical manuals for British
           Telecom (the agency's main client) to HTML format. Raw HTML tables,
           and more tables, and more tables.
-        </p>
-        <p>
+        </P>
+        <P>
           It wasn't long before I discovered Perl and CGI scripting, and thanks
           to Matt's script archive, a powerful new world opened up. Perl for
           dummies became my bedtime reading.
-        </p>
-        <p>
+        </P>
+        <P>
           During a family vacation to America in 2000, I picked a book on ASP
           3.0 (it wasnt 'classic' at the time), and VBScript became my new
           passion. That lead me to work with databases and T-SQL, using
           Microsoft Access and eventually SQL Server.
-        </p>
-        <p>
+        </P>
+        <P>
           My fathers design agency was now solely focused on website design, and
           I was on my way to becoming it's best developer. I built the first
           content management system anyone had ever seen, using ASP and an
           Access Database.
-        </p>
-        <p>
+        </P>
+        <P>
           Over the 10 years the agency was aquired 3 times, and was finally
           scooped up by Razorfish (one of the worlds largest interactive
           agencies) in 1999. We collectively decided we didn't like their style
           and 10 of us quit so we could start a fresh new web design agency.
-        </p>
-        <p>
+        </P>
+        <P>
           I remember building a boilerplate project called "Starting Point", it
           was like what Bootstrap is today, but this was way before Github,
           Sourceforge was the only place to share code. Yuck.
-        </p>
-        <p>
+        </P>
+        <P>
           After around 14 years and a few hundred websites later, and having
           moved onto Microsoft VB.NET, I decided to call it a day and start a
           fresh in London.
-        </p>
-        <p>
+        </P>
+        <P>
           Next came 4 years of being a tech lead for a small team of front end
           developers working in fintech, working with Adobe CQ5 (now AEM), and
           then I accepted the offer of becoming website manager at a fintech
           startup in Chicago, USA.
-        </p>
-        <p>
+        </P>
+        <P>
           Four years of Chicago winter was enough for my wife and kids, and I.
           So since August 2018 I have been working remotely from our beautiful
           new home in Dallas, Texas.
-        </p>
-        <p>
+        </P>
+        <P>
           Over the past 21 years, technologies have come and gone, but the
           underlying HTML, CSS and JavaScript have been there all along. One
           thing that hasnt changed is the passion I have for this job.
-        </p>
-        <p>
+        </P>
+        <P>
           These days I keep my hands very dirty in all the code, just the way I
           like it. I can call myself a full stack developer because of the story
           above and the list below, its most of the tech that I can remember
           using, but I'm sure theres more...
-        </p>
+        </P>
         <ul>
           <li>HTML</li>
           <li>CSS</li>
@@ -131,7 +141,7 @@ class About extends Component {
           <li>Adobe AEM</li>
           <li>SASS</li>
         </ul>
-      </div>
+      </Container>
     );
   }
 }
