@@ -16,6 +16,9 @@ class About extends Component {
     return (
       <Container className="about">
         <h1>About</h1>
+        <h2>Biography</h2>
+        <P>Blah blah blah</P>
+        <h2>Career History</h2>
         <P>
           When all the other students at Art College submitted paintings and
           drawings for their final projects, I built a "virtual bank" using

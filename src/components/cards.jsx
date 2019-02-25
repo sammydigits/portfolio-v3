@@ -16,7 +16,7 @@ class Cards extends Component {
       <ListContainer className="cards-container">
         {cards.map(card => (
           //pass the entire card object to each card
-          <Card key={card.nid[0].value} card={card} />
+          <Card key={card.nid} card={card} />
         ))}
       </ListContainer>
     );

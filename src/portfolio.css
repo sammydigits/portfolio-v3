@@ -67,13 +67,20 @@ h2 {
     grid-template-columns: 1fr;
   }
   .detail-image {
-    height: 200px;
+    height: 150px;
   }
   .header,
   .footer,
   .date {
     grid-column-start: 1;
     grid-column-end: 1;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .about,
+  .contact {
+    padding: 0 20px;
   }
 }
 @media (min-width: 600px) {
@@ -84,7 +91,7 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
   .detail-image {
-    height: 300px;
+    height: 200px;
   }
   .header,
   .footer,
@@ -101,7 +108,7 @@ h2 {
     grid-template-columns: 1fr 2fr;
   }
   .detail-image {
-    height: 400px;
+    height: 300px;
   }
   .header,
   .footer,
@@ -195,11 +202,11 @@ h2 {
   font-weight: 300;
 }
 .detail-body {
-  padding: 20px;
+  padding: 32px;
   line-height: 1.5;
 }
 .detail-body img {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
   border: solid 6px #f4f6f8;
   padding: 10px;
@@ -278,11 +285,16 @@ h2 {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-.about {
+.about,
+.contact {
   margin: 20px auto;
   max-width: 600px;
 }
-.about h1 {
+.contact a {
+  color: #b70038;
+}
+.about h1,
+.contact h1 {
   text-align: center;
 }
 .footer {

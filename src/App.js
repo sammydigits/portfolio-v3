@@ -4,7 +4,7 @@ import httpService from "./services/httpService";
 import posed, { PoseGroup } from "react-pose";
 import Header from "./components/header";
 import Cards from "./components/cards";
-import ProjectDetails from "./components/projectdetails";
+import Project from "./components/project";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
@@ -27,7 +27,7 @@ class App extends Component {
     const { data: cards } = await httpService.get(
       config.portfolioArticlesEndPoint
     );
-    console.log(cards);
+
     //update initial state
     this.setState({ cards });
   }
@@ -40,7 +40,7 @@ class App extends Component {
           <PoseGroup>
             <RouteContainer key={window.location.pathname}>
               <Switch>
-                <Route path="/project/:id" component={ProjectDetails} />
+                <Route path="/project/:id" component={Project} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
                 <Route

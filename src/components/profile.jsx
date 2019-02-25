@@ -11,7 +11,10 @@ const Profile = () => {
         />
       </p>
       <h3>Sam Thompson</h3>
-      <p>Full stack developer</p>
+      <p>
+        Professional and highly experienced full stack web developer. Currently
+        living in Dallas Texas and working remotely.
+      </p>
     </div>
   );
 };
