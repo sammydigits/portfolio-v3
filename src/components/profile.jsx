@@ -1,4 +1,5 @@
 import React from "react";
+import Bio from "./bio";
 
 //profile can be a stateless functional component, it doesnt do much
 const Profile = () => {
@@ -11,10 +12,7 @@ const Profile = () => {
         />
       </p>
       <h3>Sam Thompson</h3>
-      <p>
-        Professional and highly experienced full stack web developer. Currently
-        living in Dallas Texas and working remotely.
-      </p>
+      <Bio type="short" />
     </div>
   );
 };

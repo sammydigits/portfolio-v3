@@ -238,6 +238,13 @@ p {
   height: 96px;
   border: 4px solid #f4f6f8;
 }
+.profile h3 {
+  margin-bottom: 0;
+}
+.profile p {
+  font-size: 14px;
+  margin-top: 10px;
+}
 .profile,
 .related {
   padding: 15px;
@@ -322,9 +329,17 @@ blockquote {
   color: #b70038;
 }
 .about h1,
+.about h2,
 .contact h1 {
   text-align: center;
 }
+.about h2 {
+  margin-top: 50px;
+  font-weight: 600;
+  color: #b70038;
+  font-size: 1.3em;
+}
+
 .footer {
   padding: 64px 0;
   background-color: #f4f6f8;

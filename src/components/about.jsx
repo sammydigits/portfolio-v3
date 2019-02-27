@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Bio from "./bio";
 import posed from "react-pose";
 
 const Container = posed.div({
@@ -33,7 +34,7 @@ class About extends Component {
         </Container>
         <div className="about">
           <h2>Biography</h2>
-          <p>Blah blah blah</p>
+          <Bio type="long" />
           <h2>Career History</h2>
           <p>
             When all the other students at Art College submitted paintings and
