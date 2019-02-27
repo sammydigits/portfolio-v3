@@ -8,6 +8,7 @@
     "raven-js": "^3.27.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-images": "^0.5.19",
     "react-moment": "^0.8.4",
     "react-pose": "^4.0.7",
     "react-router-dom": "^4.3.1",

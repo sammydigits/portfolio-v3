@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import posed from "react-pose";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import httpService from "../services/httpService";
 import Profile from "./profile";
 import config from "../config.json";
@@ -106,10 +106,11 @@ class ProjectDetails extends Component {
             <p className="tag">More Projects</p>
 
             {this.state.related.map(project => (
-              <Link
+              <NavLink
                 to={`/project/${project.nid}`}
                 className="teaser"
                 key={project.nid}
+                activeClassName="active"
               >
                 <div className="teaser-content">
                   <h4>{project.title}</h4>
@@ -125,7 +126,7 @@ class ProjectDetails extends Component {
                     }}
                   />
                 </div>
-              </Link>
+              </NavLink>
             ))}
           </div>
         </div>
