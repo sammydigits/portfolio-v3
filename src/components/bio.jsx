@@ -11,8 +11,8 @@ const Bio = ({ type }) => {
           <p>
             Sam Thompson is Website Manager at Nadex, a fintech firm based in
             Chicago, where he is responsible for full stack web development and
-            providing the best possible user experience to the 100k/month people
-            visiting the website.
+            for providing the best possible user experience to 100k visitors per
+            month.
           </p>
           <p>
             As Nadex's website manager, Sam does more than wrangle code. With
@@ -43,7 +43,7 @@ const Bio = ({ type }) => {
     case "short":
       return (
         <p>
-          With more than 20 years of web development experience, he's obsessed
+          With more than 20 years of web development experience, Sam is obsessed
           with innovating new ways of using web technology that's absurdly
           useful and effective. <Link to="/about">More</Link>
         </p>

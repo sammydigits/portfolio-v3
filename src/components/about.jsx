@@ -51,19 +51,20 @@ class About extends Component {
             newly released Internet Explorer 3 (the first browser to support
             CSS), and Netscape 4, and built stuff using HoTMetaL, FrontPage, and
             Dreamweaver. I started off converting techinical manuals for British
-            Telecom (the agency's main client) to HTML format. Raw HTML tables,
-            and more tables, and more tables.
+            Telecom (the agency's main client) to HTML format. It was endless
+            HTML tables.
           </p>
           <p>
             It wasn't long before I discovered Perl and CGI scripting, and
-            thanks to Matt's script archive, a powerful new world opened up.
-            Perl for dummies became my bedtime reading.
+            thanks to resources like "Matt's script archive", a powerful new
+            world of opportunity opened up. Perl for dummies became my bedtime
+            reading.
           </p>
           <p>
             During a family vacation to America in 2000, I picked a book on ASP
             3.0 (it wasnt 'classic' at the time), and VBScript became my new
-            passion. That lead me to work with databases and T-SQL, using
-            Microsoft Access and eventually SQL Server.
+            passion. That led me to work with databases and T-SQL, using
+            Microsoft Access and eventually MSSQL Server.
           </p>
           <p>
             My fathers design agency was now solely focused on website design,
@@ -72,11 +73,10 @@ class About extends Component {
             an Access Database.
           </p>
           <p>
-            Over the 10 years the agency was aquired 3 times, and was finally
-            scooped up by Razorfish (one of the worlds largest interactive
-            agencies) in 1999. We collectively decided we didn't like their
-            style and 10 of us quit so we could start a fresh new web design
-            agency.
+            The agency was aquired by Razorfish (one of the worlds largest
+            interactive agencies) in 1999. After a few months, we collectively
+            decided we didn't like their style, and 10 of us quit so we could
+            start a fresh new web design agency.
           </p>
           <p>
             I remember building a boilerplate project called "Starting Point",

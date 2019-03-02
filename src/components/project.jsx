@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import posed from "react-pose";
 import { NavLink } from "react-router-dom";
-import httpService from "../services/httpService";
-import Profile from "./profile";
 import config from "../config.json";
+import httpService from "../services/httpService";
+import { LuminousGallery } from "luminous-lightbox";
+import Profile from "./profile";
+import "luminous-lightbox/dist/luminous-basic.min.css";
 
 const Container = posed.div({
   enter: { staggerChildren: 200 }
@@ -65,6 +67,9 @@ class ProjectDetails extends Component {
 
     //update initial state
     this.setState({ related });
+
+    //make the images zoomable
+    new LuminousGallery(document.querySelectorAll(".gallery"));
   }
 
   render() {
@@ -76,13 +81,6 @@ class ProjectDetails extends Component {
       field_date_worked,
       field_type
     } = this.state.project[0];
-
-    //ensure inline all images are prefixed with cms url
-    //console.log(body);
-    let updatedBody = body.replace(
-      /src="\//g,
-      'src="https://portfolio-cms.sam-thompson.info/'
-    );
 
     return (
       <Container className="details-container">
@@ -134,7 +132,7 @@ class ProjectDetails extends Component {
           <div
             className="detail-body"
             dangerouslySetInnerHTML={{
-              __html: updatedBody
+              __html: body
             }}
           />
         </MainContent>

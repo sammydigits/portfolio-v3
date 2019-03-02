@@ -229,21 +229,22 @@ p {
   padding: 10px;
 }
 
-.profile {
-  text-align: center;
-}
 .profile img {
+  display: inherit;
   border-radius: 100%;
   width: 96px;
   height: 96px;
   border: 4px solid #f4f6f8;
+  margin: 0 auto;
 }
 .profile h3 {
+  text-align: center;
   margin-bottom: 0;
 }
 .profile p {
   font-size: 14px;
-  margin-top: 10px;
+  margin: 10px 1% 0 7%;
+  text-align: left;
 }
 .profile,
 .related {
@@ -255,7 +256,7 @@ p {
   margin-bottom: 25px;
 }
 .related .tag {
-  margin: 0 0 25px 21px;
+  margin: 0 0 25px 27px;
 }
 
 .teaser {
@@ -379,4 +380,10 @@ table thead th {
   padding: 16px;
   text-align: left;
   border-top: 1px solid #ecf0f1;
+}
+.lum-close-button {
+  cursor: pointer;
+}
+.gallery {
+  cursor: zoom-in;
 }
